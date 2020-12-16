@@ -1,6 +1,5 @@
 use std::collections::HashMap;
 static INPUT: &[u32] = &[14, 1, 17, 0, 3, 20];
-static INPUT_TEST: &[u32] = &[0, 3, 6];
 
 fn solve(n: usize) -> u32 {
     let mut numbers = Vec::from(INPUT);
