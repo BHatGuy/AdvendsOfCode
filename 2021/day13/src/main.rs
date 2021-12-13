@@ -74,7 +74,6 @@ fn fold_x(matrix: &mut Vec<Vec<bool>>, mut x: usize) {
             row.insert(0, false);
         }
         x = x + 1;
-        println!("1")
     }
     
     for row in matrix {
@@ -85,6 +84,7 @@ fn fold_x(matrix: &mut Vec<Vec<bool>>, mut x: usize) {
             row[target] |= b;
             i += 1;
         }
+        row.remove(x);
     }
 }
 
@@ -123,6 +123,7 @@ fn solve2(inp: InputType) {
 }
 
 fn main() {
+    // BLKJRBAG
     let input = get_input("input.txt");
     println!("1: {}", solve1(input.clone()));
     solve2(input);
