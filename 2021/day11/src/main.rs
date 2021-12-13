@@ -1,6 +1,5 @@
 use std::collections::HashSet;
 use std::fs;
-use termion::color;
 
 type InputType = Vec<Vec<u32>>;
 const OFFSETS: &[(i32, i32)] = &[
@@ -26,24 +25,6 @@ fn get_input(name: &str) -> InputType {
     input
 }
 
-fn print_ocots(matrix: &InputType) {
-    for row in matrix {
-        for &o in row {
-            if o == 0 {
-                print!(
-                    "{}{}{}",
-                    color::Fg(color::Green),
-                    o,
-                    color::Fg(color::Reset)
-                );
-            } else {
-                print!("{}", o);
-            }
-        }
-        println!();
-    }
-    println!();
-}
 
 fn step(matrix: &mut InputType) {
     let mut to_flash = Vec::new();
