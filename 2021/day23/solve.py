@@ -95,9 +95,9 @@ def solved(_, rooms):
 
 def solve(hallway, rooms):
     stack = [(hallway, rooms, 0)]
-    cost = float("inf")
+    cost = 13000
     while len(stack) > 0:
-        print(len(stack), end="\r")
+        # print(len(stack), end="\r")
         # stack.sort(key=lambda x: x[2], reverse=True)
         h, r, c = stack.pop()
         if c > cost:
@@ -109,7 +109,7 @@ def solve(hallway, rooms):
                     cost = s[2] + c
                     print(cost)
             else:
-                 if s[2] + c > cost:
+                if s[2] + c > cost:
                     continue
                 stack.append((s[0], s[1], s[2] + c))
 

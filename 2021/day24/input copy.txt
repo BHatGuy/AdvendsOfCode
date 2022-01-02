@@ -1,0 +1,323 @@
+inp w
+mul x 0     
+add x z     
+mod x 26    
+div z 1     
+add x 12  
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x     
+add y 1
+mul z y     
+mul y 0
+add y w
+add y 6
+mul y x     
+add z y
+
+w = input()
+if w != z.peek() + 12:
+    z.push(w + 6)
+
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 11
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 12
+mul y x
+add z y
+
+w = input()
+if w != z.peek() + 11:
+    z.push(w + 12)
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 10
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y 
+mul y 0
+add y w
+add y 5
+mul y x  
+add z y
+
+w = input()
+if w != z.peek() + 10:
+    z.push(w + 5)
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 10
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y     
+mul y 0
+add y w
+add y 10
+mul y x     
+add z y
+
+w = input()
+if w != z.peek() + 10:
+    z.push(w + 10)
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26   
+add x -16
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 7
+mul y x 
+add z y
+
+w = input()
+if w != z.pop() - 16:
+    z.push(w + 7)
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 14
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 0
+mul y x
+add z y
+
+w = input()
+if w != z.peek() + 14:
+    z.push(w)
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 12
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 4
+mul y x
+add z y
+
+w = input()
+if w != z.peek() + 12:
+    z.push(w + 4)
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -4
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 12
+mul y x
+add z y
+
+w = input()
+if w != z.pop() -4:
+    z.push(w + 12)
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 15
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 14
+mul y x
+add z y
+
+w = input()
+if w != z.peek() + 15:
+    z.push(w + 14)
+
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -7
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 13
+mul y x
+add z y
+
+w = input()
+if w != z.pop() -7:
+    z.push(w + 13)
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -8
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 10
+mul y x
+add z y
+
+w = input()
+if w != z.pop() -8:
+    z.push(w + 10)
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -4
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 11
+mul y x
+add z y
+
+w = input()
+if w != z.pop() -4:
+    z.push(w + 11)
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -15
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 9
+mul y x
+add z y
+
+w = input()
+if w != z.pop() -15:
+    z.push(w + 9)
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -8
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 9
+mul y x
+add z y
+
+w = input()
+if w != z.pop() -8:
+    z.push(w + 9)
