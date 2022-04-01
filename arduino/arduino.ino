@@ -1,20 +1,21 @@
 #include <Arduino.h>
 
 #include "day1.hpp"
+#include "day2.hpp"
 #include "utils.hpp"
 
 int leds[] = {4, 5, 6, 7};
 void blink_mode();
-void (*modes[])() = {&solve_d1, &blink_mode};
-char* titles[] = {"Day 1", "Blink-Mode"};
-#define MODE_COUNT 2
+void (*modes[])() = {&solve_d1, &solve_d2, &blink_mode};
+char* titles[] = {"Day 1", "Day 2", "Blink-Mode"};
+#define MODE_COUNT sizeof(titles)/sizeof(char*)
 
 void setup() {
     for (int i = 0; i < 4; i++) {
         pinMode(leds[i], OUTPUT);
     }
     Serial.begin(9600);
-    Serial.setTimeout(1000);
+    Serial.setTimeout(10000);
 }
 
 void loop() {
