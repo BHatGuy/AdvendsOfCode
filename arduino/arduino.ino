@@ -2,20 +2,23 @@
 
 #include "day1.hpp"
 #include "day2.hpp"
+#include "day3.hpp"
+#include "day4.hpp"
+#include "day5.hpp"
 #include "utils.hpp"
 
 int leds[] = {4, 5, 6, 7};
 void blink_mode();
-void (*modes[])() = {&solve_d1, &solve_d2, &blink_mode};
-char* titles[] = {"Day 1", "Day 2", "Blink-Mode"};
-#define MODE_COUNT sizeof(titles)/sizeof(char*)
+void (*modes[])() = {&solve_d1, &solve_d2, &solve_d3, &solve_d4, &solve_d5, &blink_mode};
+char* titles[] = {"Day 1", "Day 2", "Day 3 (Not working)", "Day 4", "Day 5", "Blink-Mode"};
+#define MODE_COUNT sizeof(titles) / sizeof(char*)
 
 void setup() {
     for (int i = 0; i < 4; i++) {
         pinMode(leds[i], OUTPUT);
     }
     Serial.begin(9600);
-    Serial.setTimeout(10000);
+    Serial.setTimeout(6000000);
 }
 
 void loop() {
@@ -27,16 +30,15 @@ void loop() {
         Serial.print(" : ");
         Serial.println(titles[i - 1]);
     }
-    char c = get_char();
+    String s = Serial.readStringUntil('\r');
+    int index = s.toInt();
 
-    if (isDigit(c)) {
-        size_t index = c - '0' - 1;
-        if (index < MODE_COUNT) {
-            Serial.print("You chose: ");
-            Serial.println(titles[index]);
+    if (index > 0 && index <= MODE_COUNT) {
+        index--;
+        Serial.print("You chose: ");
+        Serial.println(titles[index]);
 
-            modes[index]();
-        }
+        modes[index]();
     }
 
     delay(1);
@@ -50,7 +52,7 @@ void blink_mode() {
             digitalWrite(leds[i], (count >> i) & 1);
         }
         count++;
-        delay(1000);
+        delay(3333);
     }
     for (int i = 0; i < 4; i++) {
         digitalWrite(leds[i], LOW);
