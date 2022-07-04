@@ -1,0 +1,2 @@
+: main.cpp |> g++ -Wall -c %f -o %o |> build/%B.o
+: build/*.o |> g++ -lcrypto %f -o %o |> build/day4
