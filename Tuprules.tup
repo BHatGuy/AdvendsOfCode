@@ -1,0 +1,5 @@
+BUILDDIR := build
+CFLAGS += -Wall
+
+!cc = |> g++ $(CFLAGS) -c %f -o %o |> $(BUILDDIR)/%B.o
+!ld = |> g++ $(CFLAGS) %f -o %o |>

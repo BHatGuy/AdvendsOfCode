@@ -1,2 +1,4 @@
-: main.cpp |> g++ -Wall -c %f -o %o |> build/%B.o
-: build/*.o |> g++ -lcrypto %f -o %o |> build/day4
+include_rules
+
+: main.cpp |> !cc |> $(BUILDDIR)/%B.o
+: $(BUILDDIR)/*.o |> g++ $(CFLAGS) -lcrypto %f -o %o |> $(BUILDDIR)/day4
