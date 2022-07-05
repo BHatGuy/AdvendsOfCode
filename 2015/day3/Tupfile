@@ -1,4 +1,4 @@
 include_rules
 
 : main.cpp |> !cc |>
-: $(BUILDDIR)/*.o |> !ld |> $(BUILDDIR)/day3
+: *.o |> !ld |> day3

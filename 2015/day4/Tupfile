@@ -1,4 +1,4 @@
 include_rules
 
-: main.cpp |> !cc |> $(BUILDDIR)/%B.o
-: $(BUILDDIR)/*.o |> g++ $(CFLAGS) -lcrypto %f -o %o |> $(BUILDDIR)/day4
+: main.cpp |> !cc |> %B.o
+: *.o |> g++ $(CFLAGS) -lcrypto %f -o %o |> day4
