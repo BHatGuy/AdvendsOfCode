@@ -60,7 +60,7 @@ int solve2(const std::vector<std::string>& input) {
             if (match) {
                 if (match->second != i - 1) contains_pair = true;
             } else {
-                pairs.push_back(std::pair(pair, i));
+                pairs.push_back(std::pair<std::string, size_t>(pair, i));
             }
 
             if (last[0] == c) {

@@ -1,7 +1,5 @@
 build:
     tup
 
-exec201505: build
-    ./build/2015/day5/day5 < 2015/day5/input.txt
-
-
+exec year day: build
+    ./build/{{year}}/day{{day}}/day{{day}} < {{year}}/day{{day}}/input.txt
