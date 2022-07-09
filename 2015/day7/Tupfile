@@ -1,0 +1,4 @@
+include_rules
+
+: main.cpp |> !cc |> %B.o
+: *.o |> !ld |> day7

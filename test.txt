@@ -1,0 +1,5 @@
+2 -> f
+1 -> c
+c OR f -> d
+d LSHIFT 2 -> g
+g AND 1 -> a
