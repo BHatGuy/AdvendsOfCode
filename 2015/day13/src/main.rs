@@ -1,9 +1,8 @@
 use itertools::Itertools;
-use text_io::scan;
-use std::fs;
-use std::collections::HashMap;
 use std::cmp;
-
+use std::collections::HashMap;
+use std::fs;
+use text_io::scan;
 
 fn read_input(name: &str) -> Vec<Vec<i64>> {
     let buf = fs::read_to_string(name).unwrap();
@@ -12,10 +11,10 @@ fn read_input(name: &str) -> Vec<Vec<i64>> {
 
     let lines = buf.trim_end().split("\n");
     for l in lines {
-        let alice : String;
-        let bob : String;
-        let _direction : String;
-        let _value : i64;
+        let alice: String;
+        let bob: String;
+        let _direction: String;
+        let _value: i64;
 
         scan!(l.bytes() => "{} would {} {} happiness units by sitting next to {}.", alice, _direction, _value, bob);
 
@@ -29,15 +28,14 @@ fn read_input(name: &str) -> Vec<Vec<i64>> {
         }
     }
 
-
     let mut dist_matrix = vec![vec![0i64; name_map.len()]; name_map.len()];
 
     let lines = buf.trim_end().split("\n");
     for l in lines {
-        let alice : String;
-        let bob : String;
-        let direction : String;
-        let mut value : i64;
+        let alice: String;
+        let bob: String;
+        let direction: String;
+        let mut value: i64;
 
         scan!(l.bytes() => "{} would {} {} happiness units by sitting next to {}.", alice, direction, value, bob);
 
@@ -52,20 +50,19 @@ fn read_input(name: &str) -> Vec<Vec<i64>> {
     return dist_matrix;
 }
 
-
 fn solve(input: &Vec<Vec<i64>>) {
-    let persons : Vec<usize> = (0..input.len()).collect();
+    let persons: Vec<usize> = (0..input.len()).collect();
     let mut maxcost = i64::MIN;
 
     for perm in persons.iter().permutations(persons.len()) {
         let mut cost = 0;
 
-        for i in 0..perm.len()-1 {
-            cost += input[*perm[i]][*perm[i+1]];
-            cost += input[*perm[i+1]][*perm[i]];
+        for i in 0..perm.len() - 1 {
+            cost += input[*perm[i]][*perm[i + 1]];
+            cost += input[*perm[i + 1]][*perm[i]];
         }
-        cost += input[*perm[0]][*perm[perm.len()-1]];
-        cost += input[*perm[perm.len()-1]][*perm[0]];
+        cost += input[*perm[0]][*perm[perm.len() - 1]];
+        cost += input[*perm[perm.len() - 1]][*perm[0]];
 
         maxcost = cmp::max(maxcost, cost);
     }
