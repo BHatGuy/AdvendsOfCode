@@ -1,0 +1,17 @@
+all: run
+
+test:
+	@echo No Tests
+
+.PHONY: all test clean
+
+run: build/day2
+	@./build/day2
+
+build/day2: main.cpp
+	@mkdir -p $(@D)
+	g++ -o build/day2 main.cpp
+
+clean:
+	rm -rf build/day2
+
