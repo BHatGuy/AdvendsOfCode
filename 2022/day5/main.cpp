@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cinttypes>
 #include <cstddef>
 #include <cstring>
@@ -6,7 +7,6 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include <algorithm>
 
 using std::cout;
 using std::endl;
