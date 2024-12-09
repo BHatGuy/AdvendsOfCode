@@ -8,5 +8,6 @@ edition = "2021"
 [dependencies]
 itertools = "0.13.0"
 ndarray = "0.16.1"
+num = "0.4.3"
 regex = "1.11.1"
 text_io = "0.1.12"
